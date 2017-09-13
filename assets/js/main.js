@@ -72,11 +72,9 @@ const app = {
 
     marcarUbicacion: function(place, detalleUbicacion, marker) {
         if (!place.geometry) {
-            // Error si no encuentra el lugar indicado
             window.alert("No encontramos el lugar que indicaste: '" + place.name + "'");
             return;
         }
-        // If the place has a geometry, then present it on a map.
         if (place.geometry.viewport) {
             app.map.fitBounds(place.geometry.viewport);
         } else {
